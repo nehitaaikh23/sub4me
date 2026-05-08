@@ -10,33 +10,46 @@ const SideBar = ({sideBar, setSideBar}) => {
     const {user} = useUser();
     const { openSignIn } = useClerk();
 
+    const navLinks = [
+        {name: "BUY AIRTIME", path: "/buy-airtime"},
+        {name: "BUY DATA", path: "/buy-data"},
+        {name: "MY CONTACTS", path: "/my-contacts"},
+        {name: "ABOUT US", path: "/"},
+        {name: "CONTACT US", path: "/"}
+    ]
+
   return (
-    <div className={`${ sideBar? 'translate-x-0' :'-translate-x-full'} w-[50%] transition min-h-screen shadow-sm fixed lg:hidden top-0 left-0 bg-white z-50 flex flex-col items-center px-8 py-10`}>
-        <div className='flex w-full justify-between items-center mb-10'>
+    <div className={`${ sideBar? 'translate-x-0' :'-translate-x-full'} w-[50%] transition min-h-screen shadow-sm fixed lg:hidden top-0 left-0 bg-white z-50 flex flex-col py-10`}>
+        <div className='flex w-full px-5 justify-between items-center mb-5'>
             <h1 className='text-2xl lg:text-4xl cursor-pointer font-bold' onClick={() => {navigate("/"); console.log("Logo clicked")}}>Sub4Me</h1>
             <X className='cursor-pointer' onClick={() => {setSideBar(false)}}/>
         </div>
         <hr className='h-2 w-full' />
 
-        <div className='flex gap-10 items-center w-full text-xl flex-col mt-10'>
-            <p onClick={() => {navigate('/buy-airtime'); setSideBar(false)}}>Buy Airtime</p>
-            <hr className='h-2 w-full cursor-pointer'/>
-            <p onClick={() => {navigate('/buy-data'); setSideBar(false)}}>Buy Data</p>
-            <hr className='h-2 w-full cursor-pointer' />
-            <p onClick={() => {navigate('/my-contacts'); setSideBar(false)}}>My Contacts</p>
-            <hr className='h-2 w-full cursor-pointer' />
-            <p onClick={() => {navigate('/'); setSideBar(false)}}>About Us</p>
-            <hr className='h-2 w-full cursor-pointer' />
-            <p onClick={() => {navigate('/'); setSideBar(false)}}>Contact Us</p>
-            <hr className='h-2 w-full cursor-pointer' />        
+        <div className='w-full text-xl'>
+
+            
+                {navLinks.map((link, i) => {
+                    return (
+                        <div key={i} className ="flex flex-col w-full cursor-pointer">
+                            <div className='flex items-center w-full h-12 hover:bg-black hover:text-white transition px-5 rounded-lg' onClick={() => {navigate(link.path); setSideBar(false)}}>
+                                <p onClick={() => {navigate(link.path); setSideBar(false)}}>{link.name}</p>
+                            </div>
+                                <hr className='h-2 w-full'/>
+                            
+                        </div>
+                    )
+                })}
+                    
         </div>
 
-        <div className='flex items-center w-full mt-auto'>
+        <div className='flex items-center px-5 w-full mt-auto'>
             {
                 user 
                 ? (<div className='flex w-full'>
                     <UserButton />
-                    
+                    {user.firstName && <p className='ml-2 text-gray-700'>{user.firstName}</p>}
+                    {user.lastName && <p className='ml-1 text-gray-700'>{user.lastName}</p>}
                 </div>
                  )
                 : <button onClick={openSignIn} className='cursor-pointer px-4 py-2 border border-black text-black hover:bg-black hover:text-white rounded-3xl self-end'>Login</button>

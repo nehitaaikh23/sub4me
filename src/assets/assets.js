@@ -1,6 +1,9 @@
 import background from '../assets/background.jpg'
 import gradientBackground from '../assets/gradientBackground.png'
 import glologo from '../assets/glo.png'
+import mtnlogo from '../assets/mtnlogo.svg'
+import airtellogo from '../assets/airtellogo.png'
+import ninemobilelogo from '../assets/9mobilelogo.svg'
 
 const myNumber = "09050481320"
 
@@ -40,9 +43,9 @@ export const myDummyContacts = [
 
 export const networkLogos = [
     {name: "Glo", logo: glologo},
-    {name: "MTN" , logo: ''},
-    {name: "Airtel", logo: ''},
-    {name: "9mobile", logo: ''}
+    {name: "MTN" , logo: mtnlogo},
+    {name: "Airtel", logo: airtellogo},
+    {name: "9mobile", logo: ninemobilelogo}
 ]
 
 export const assets = {
@@ -100,5 +103,5 @@ export const networkPrefixes = {
 }
 
 export const networkProviders = [
-    "Glo", "MTN", "Airtel", "9Mobile"
+    "Glo", "MTN", "Airtel", "9mobile"
 ]

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { assets } from '../assets/assets'
 import MiniContact from './MiniContact';
 import { networkPrefixes, networkLogos, myContact, networkProviders } from '../assets/assets';
+import { Check, Gift, User } from 'lucide-react';
 
 const SelectRecipient = ({ setRecipient, recipient, number, setNumber, network, setNetwork }) => {
 
@@ -55,10 +56,11 @@ const SelectRecipient = ({ setRecipient, recipient, number, setNumber, network, 
                         <div className='flex flex-col lg:flex-row gap-2 justify-center items-center'>
                             <div onClick={() => {setRecipient('myself'); setNumber(`${assets.myNumber}`); setSelectFromContacts(false); setNetwork(myContact.network)}} className={`w-sm h-15 rounded-2xl border
                          border-black outline-0 cursor-pointer text-xl  ${recipient === 'myself' ? 'bg-black text-white' : ""}
-                         hover:bg-black hover:text-white transition flex items-center justify-center`}>Myself</div>
+                         hover:bg-black hover:text-white transition flex gap-2 items-center justify-center`}> <User /> Myself</div>
                             <div onClick={() => {setRecipient('other'); setNumber(''); setNetwork(null)}} className={`w-sm h-15 border
                          border-black outline-0 rounded-2xl cursor-pointer hover:bg-black hover:text-white 
-                         transition flex items-center justify-center ${recipient === 'other' ? 'bg-black text-white' : ""} text-xl`}>
+                         transition flex gap-2 items-center justify-center ${recipient === 'other' ? 'bg-black text-white' : ""} text-xl`}>
+                            <Gift />
                             Someone Else
                             </div>
                         </div>
@@ -69,19 +71,25 @@ const SelectRecipient = ({ setRecipient, recipient, number, setNumber, network, 
                     </div>
                     <div className='flex w-full items-center justify-center pr-4'>
                             {network && (
-                                 <p>{network} detected  </p>
-                    )} { network === "Unknown Network" && (
-                        <p onClick={() => setSelectNetworkManually(true)} className='text-blue-900 ml-3 cursor-pointer'>Select Manually</p>
+                                 <div className="flex items-center">
+                                    <img src={networkLogos.find((logo) => logo.name === network)?.logo || ''} alt={network} className="w-6 mr-2" />
+                                    <p>{network} detected <span onClick={() => setSelectNetworkManually(true)} className='text-blue-900 cursor-pointer ml-3'>Select Manually</span></p>
+                        
+                                    
+                                </div>
                     )}
                     {selectNetworkManually && (
                         <div className='flex w-sm fixed ml-[-80px] lg:ml-0 flex-col bg-white text-black rounded-lg shadow-lg py-2 min-h-25'>
                                 <h1 className='text-gray-500 mb-2 ml-2'>CONTACTS</h1>
                                 <hr className='w-full text-gray-300'/>
-                                {networkProviders.map((network, i) => 
+                                {networkProviders.map((netw, i) => 
                                         (
                                         <div className='flex flex-col w-full' key={i}>
-                                            <div onClick={() => {setNetwork(network); setSelectNetworkManually(false); setIsManualOverride(true)}} className='flex h-10 items-center w-full items-center justify-between cursor-pointer'>
-                                                <p className='ml-2'>{network}</p>
+                                            <div onClick={() => {setNetwork(netw); setSelectNetworkManually(false); setIsManualOverride(true)}} className='flex h-10 items-center w-full items-center justify-between cursor-pointer'>
+                                                <p className='ml-2'>{netw}</p>
+                                                {
+                                                    network === netw && <Check className='w-5 mr-4' />
+                                                }
                                             </div>
                                             <hr className='w-full text-gray-300'/>
                                         </div>
