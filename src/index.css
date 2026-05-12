@@ -9,6 +9,7 @@
 @theme{
     --color-primary: #009924;
     --color-background: #ededed;
+    --breakpoint-sm2: 768px;
 }
 
 html, body{

@@ -29,7 +29,7 @@ const PickDataPlan = ({ setPlan, plan, pickPlan, setPickPlan, network, planName,
               {dataPlans.map((item, i) => {
                 
                   if (item.network === network){
-                    return <div className='w-full'>
+                    return <div key={i} className='w-full'>
                       {item.plans.filter((plan) => plan.duration === planType).map((dataplan, i) => {
                         return <div key={i}>
                             <div onClick={() => {setPickPlan(false); setPlanName(dataplan.name); setPlan(dataplan.id)}} className='flex justify-between items-center w-full cursor-pointer py-1'>

@@ -26,16 +26,16 @@ const SideBar = ({sideBar, setSideBar}) => {
         </div>
         <hr className='h-2 w-full' />
 
-        <div className='w-full text-xl'>
+        <div className='w-full'>
 
             
                 {navLinks.map((link, i) => {
                     return (
                         <div key={i} className ="flex flex-col w-full cursor-pointer">
                             <div className='flex items-center w-full h-12 hover:bg-black hover:text-white transition px-5 rounded-lg' onClick={() => {navigate(link.path); setSideBar(false)}}>
-                                <p onClick={() => {navigate(link.path); setSideBar(false)}}>{link.name}</p>
+                                <p className='text-lg' onClick={() => {navigate(link.path); setSideBar(false)}}>{link.name}</p>
                             </div>
-                                <hr className='h-2 w-full'/>
+                                <hr className='h-1 w-full'/>
                             
                         </div>
                     )

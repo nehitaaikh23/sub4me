@@ -21,9 +21,9 @@ const MyContacts = () => {
     }
 
   return user ? (
-    <div className='flex items-center justify-center min-h-screen w-full'>
+    <div className='flex justify-center min-h-screen w-full'>
         <Navbar />
-        <div className='min-h-[85vh] overflow-y-auto w-full px-8 flex lg:px-24 gap-5 items-center flex-col lg:mt-5'>
+        <div className='w-full px-6 flex lg:px-24 gap-5 items-center flex-col mt-20'>
             <div className='flex items-center justify-between w-full'>
                 <h1 className='text-3xl lg:text-4xl font-bold'>My Contacts</h1>
                 <Plus className='w-8 cursor-pointer text-blue-600' onClick={() => setAddContact(true)}/>

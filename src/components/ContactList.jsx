@@ -7,7 +7,7 @@ const ContactList = () => {
 
 
   return (
-    <div className='flex w-full h-[100%] flex-col'>
+    <div className='flex w-full flex-col'>
         <h1 className='text-gray-500 mb-2'>CONTACTS</h1>
         <hr className='w-full text-gray-300'/>
 

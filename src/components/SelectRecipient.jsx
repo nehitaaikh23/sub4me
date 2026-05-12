@@ -52,23 +52,23 @@ const SelectRecipient = ({ setRecipient, recipient, number, setNumber, network, 
   return (
         <div className='flex flex-col gap-2 justify-center items-center'>
                     <div className='flex flex-col justify-center items-center flex-wrap gap-2'>
-                        <p className='text-xl font-semibold lg:text-2xl'>Who Is This For?</p>
-                        <div className='flex flex-col lg:flex-row gap-2 justify-center items-center'>
-                            <div onClick={() => {setRecipient('myself'); setNumber(`${assets.myNumber}`); setSelectFromContacts(false); setNetwork(myContact.network)}} className={`w-sm h-15 rounded-2xl border
-                         border-black outline-0 cursor-pointer text-xl  ${recipient === 'myself' ? 'bg-black text-white' : ""}
-                         hover:bg-black hover:text-white transition flex gap-2 items-center justify-center`}> <User /> Myself</div>
-                            <div onClick={() => {setRecipient('other'); setNumber(''); setNetwork(null)}} className={`w-sm h-15 border
+                        <p className='text-lg font-semibold lg:text-xl'>Who Is This For?</p>
+                        <div className='flex gap-2 justify-center items-center'>
+                            <div onClick={() => {setRecipient('myself'); setNumber(`${assets.myNumber}`); setSelectFromContacts(false); setNetwork(myContact.network)}} className={`lg:w-sm w-[140px] h-27 rounded-2xl border
+                         border-black outline-0 cursor-pointer text-lg lg:text-xl  ${recipient === 'myself' ? 'bg-black text-white' : ""}
+                         hover:bg-black hover:text-white transition flex flex-col lg:flex-row gap-2 items-center justify-center`}> <User className='pt-2'/> Myself <div className='text-sm'>({myContact.number})</div></div>
+                            <div onClick={() => {setRecipient('other'); setNumber(''); setNetwork(null)}} className={`lg:w-sm w-[140px] h-27 border
                          border-black outline-0 rounded-2xl cursor-pointer hover:bg-black hover:text-white 
-                         transition flex gap-2 items-center justify-center ${recipient === 'other' ? 'bg-black text-white' : ""} text-xl`}>
+                         transition flex flex-col lg:flex-row gap-2 items-center justify-center ${recipient === 'other' ? 'bg-black text-white' : ""} text-lg lg:text-xl`}>
                             <Gift />
                             Someone Else
                             </div>
                         </div>
                     </div>
-                    <div className='flex w-sm gap-4 items-center border rounded-2xl border-black lg:w-[48rem]'>
+                    {recipient === 'other' && (<div className='flex w-sm items-center justify-center border rounded-2xl border-black lg:w-[48rem]'>
                              
-                            <input onChange={(e) => {handleNumberChange(e)}} placeholder='08012345678' type="tel" className=' transition h-15 pr-4 outline-0 text-xl lg:text-2xl m-auto' value={number}/>
-                    </div>
+                            <input onChange={(e) => {handleNumberChange(e)}} placeholder='08012345678' type="tel" className=' transition flex h-15 outline-0 text-lg lg:text-xl justify-center items-center w-full px-5' value={number}/>
+                    </div>)}
                     <div className='flex w-full items-center justify-center pr-4'>
                             {network && (
                                  <div className="flex items-center">

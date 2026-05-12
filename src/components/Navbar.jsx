@@ -17,15 +17,15 @@ const Navbar = () => {
     const [sideBar, setSideBar] = useState(false);
 
   return (
-    <nav className='flex h-10 fixed top-0 items-center justify-between w-full px-8 py-8 lg:px-24 backdrop-blur-sm shadow-sm z-50'>
+    <nav className='flex h-10 fixed top-0 items-center justify-between w-full px-10 py-8 sm2:px-24 backdrop-blur-sm shadow-sm z-50'>
         <div  className='flex h-5 items-center justify-between w-full'>
             <div>
-            <h1 className='text-2xl lg:text-4xl cursor-pointer font-bold' onClick={() => {navigate("/"); console.log("Logo clicked")}}>Sub4Me</h1>
+            <h1 className='text-3xl lg:text-4xl cursor-pointer font-bold' onClick={() => {navigate("/"); console.log("Logo clicked")}}>Sub4Me</h1>
             
         </div>
 
         
-        <div className='flex gap-8 items-center text-xl hidden sm:flex'>
+        <div className='gap-8 items-center text-xl hidden sm2:flex'>
             <p className='font-semibold text-gray-700 cursor-pointer px-2 py-2 rounded-2xl border border-white hover:border-gray-500 transition' onClick={() => {navigate('/buy-airtime')}}>Airtime</p>
             <p className='font-semibold text-gray-700 cursor-pointer px-2 py-2 rounded-2xl border border-white hover:border-gray-500 transition' onClick={() => {navigate('/buy-data')}}>Data</p>
             <p className='font-semibold text-gray-700 cursor-pointer px-2 py-2 rounded-2xl border border-white hover:border-gray-500 transition' onClick={() => {navigate('/my-contacts')}}>My Contacts</p>
@@ -37,7 +37,7 @@ const Navbar = () => {
                 : <button onClick={openSignIn} className='cursor-pointer px-4 py-2 border border-black text-black hover:bg-black hover:text-white rounded-3xl'>Login</button>
             }          
         </div>
-        <Menu className='cursor-pointer sm:hidden' onClick={() => setSideBar(true)}/>
+        <Menu className='cursor-pointer sm2:hidden' onClick={() => setSideBar(true)}/>
         </div>
         
         <SideBar sideBar={sideBar} setSideBar={setSideBar}/>

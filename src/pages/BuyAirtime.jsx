@@ -57,26 +57,26 @@ const BuyAirtime = () => {
         <Navbar />
         <div className='min-h-screen flex items-center justify-center w-full px-8 lg:px-24'>
             <ConfirmationScreen confirmationScreen={confirmationScreen} setConfirmationScreen={setConfirmationScreen} amount={amount} number={number} purchaseType={purchaseType} recipient={recipient} network={network}/>
-            <div className='min-h-[60vh] flex flex-col gap-5 items-center justify-center'>
-                <h1 className='text-3xl lg:text-4xl font-bold mb-10'>Buy Airtime</h1>
+            <div className='flex flex-col gap-2 items-center justify-center'>
+                <h1 className='text-2xl lg:text-3xl font-bold mb-5'>Buy Airtime</h1>
                 <form className='flex flex-col items-center justify-center gap-5' onSubmit={handleSubmit}>
                 <SelectRecipient network={network} setNetwork={setNetwork} setRecipient={setRecipient} recipient={recipient} number={number} setNumber={setNumber} handleNumberChange={handleNumberChange}/>
                 <div className='flex flex-col items-center'>
-                    <p className='text-xl font-semibold lg:text-2xl'>How Much?</p>
-                    <div className='grid grid-cols-3 gap-4 justify-center items-center mt-4'>
-                        <div className={`${amount === 100 && !customAmount ? 'bg-black text-white' : 'cursor-pointer'} w-25 hover:bg-black hover:text-white h-25 rounded-lg border border-black flex items-center justify-center text-xl`} onClick={() => {setAmount(100)}}>₦100</div>
-                        <div className={`${amount === 200 && !customAmount ? 'bg-black text-white' : 'cursor-pointer'} w-25 hover:bg-black hover:text-white h-25 rounded-lg border border-black flex items-center justify-center text-xl`} onClick={() => {setAmount(200)}}>₦200</div>
-                        <div className={`${amount === 500 && !customAmount ? 'bg-black text-white' : 'cursor-pointer'} w-25 hover:bg-black hover:text-white h-25 rounded-lg border border-black flex items-center justify-center text-xl`} onClick={() => {setAmount(500)}}>₦500</div>
-                        <div className={`${amount === 1000 && !customAmount ? 'bg-black text-white' : 'cursor-pointer'} w-25 hover:bg-black hover:text-white h-25 rounded-lg border border-black flex items-center justify-center text-xl`} onClick={() => {setAmount(1000)}}>₦1000</div>
-                        <div className={`${amount === 2000 && !customAmount ? 'bg-black text-white' : 'cursor-pointer'} w-25 hover:bg-black hover:text-white h-25 rounded-lg border border-black flex items-center justify-center text-xl`} onClick={() => {setAmount(2000)}}>₦2000</div>
-                        <div className={`${customAmount ? 'bg-black text-white' : 'cursor-pointer'} w-25 hover:bg-black hover:text-white h-25 rounded-lg border border-black flex items-center justify-center text-xl`} onClick={() => {setCustomAmount(true)}}>Custom</div>
+                    <p className='text-lg font-semibold lg:text-xl'>How Much?</p>
+                    <div className='flex flex-wrap gap-4 lg:grid lg:grid-cols-3 lg:gap-4 justify-center items-center mt-4'>
+                        <div className={`${amount === 100 && !customAmount ? 'bg-black text-white' : 'cursor-pointer'} min-w-15 px-2 h-15 lg:w-25 hover:bg-black hover:text-white lg:h-25 rounded-lg border border-black flex items-center justify-center text-lg`} onClick={() => {setAmount(100)}}>₦100</div>
+                        <div className={`${amount === 200 && !customAmount ? 'bg-black text-white' : 'cursor-pointer'} min-w-15 px-2 h-15 lg:w-25 hover:bg-black hover:text-white lg:h-25 rounded-lg border border-black flex items-center justify-center text-lg`} onClick={() => {setAmount(200)}}>₦200</div>
+                        <div className={`${amount === 500 && !customAmount ? 'bg-black text-white' : 'cursor-pointer'} min-w-15 px-2 h-15 lg:w-25 hover:bg-black hover:text-white lg:h-25 rounded-lg border border-black flex items-center justify-center text-lg`} onClick={() => {setAmount(500)}}>₦500</div>
+                        <div className={`${amount === 1000 && !customAmount ? 'bg-black text-white' : 'cursor-pointer'} min-w-15 px-2 h-15 lg:w-25 hover:bg-black hover:text-white lg:h-25 rounded-lg border border-black flex items-center justify-center text-lg`} onClick={() => {setAmount(1000)}}>₦1000</div>
+                        <div className={`${amount === 2000 && !customAmount ? 'bg-black text-white' : 'cursor-pointer'} min-w-15 px-2 h-15 lg:w-25 hover:bg-black hover:text-white lg:h-25 rounded-lg border border-black flex items-center justify-center text-lg`} onClick={() => {setAmount(2000)}}>₦2000</div>
+                        <div className={`${customAmount ? 'bg-black text-white' : 'cursor-pointer'} min-w-15 h-15 lg:w-25 hover:bg-black hover:text-white lg:h-25 px-3 rounded-lg border border-black flex items-center justify-center text-xl`} onClick={() => {setCustomAmount(!customAmount)}}>Custom</div>
                     </div>
                     <div>
                                 {customAmount && 
 
                                     <div className='flex items-center mt-4 h-15 px-4 text-xl m-auto border border-black rounded-2xl'>
                                         <span className='text-gray-500 px-5'>₦</span> 
-                                        <input value={amount} onChange={(e) => setAmount(e.target.value)} placeholder='Enter Amount' type="number" className='outline-0 text-xl m-auto'/>
+                                        <input value={amount} onChange={(e) => setAmount(e.target.value)} placeholder='Enter Amount' type="number" className='outline-0 text-lg m-auto'/>
                                     </div>
                                 
                                 }

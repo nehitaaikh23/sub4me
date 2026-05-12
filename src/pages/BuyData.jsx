@@ -72,12 +72,12 @@ const BuyData = () => {
             {pickPlan && (<PickDataPlan planName={planName} setPlanName={setPlanName} setPlan={setPlan} plan={plan} pickPlan={pickPlan} setPickPlan={setPickPlan} network={network}/>)}
             <ConfirmationScreen planName={planName} confirmationScreen={confirmationScreen} setConfirmationScreen={setConfirmationScreen} plan={plan} number={number} purchaseType={purchaseType} recipient={recipient} network={network}/>
             <div className='min-h-[60vh] flex flex-col gap-5 items-center justify-center'>
-                <h1 className='text-3xl lg:text-4xl font-bold mb-10'>Buy Data</h1>
+                <h1 className='text-2xl lg:text-3xl font-bold mb-10'>Buy Data</h1>
                 <form className='flex flex-col items-center justify-center gap-5' onSubmit={handleSubmit}>
                  
                 <SelectRecipient network={network} setNetwork={setNetwork} setRecipient={setRecipient} recipient={recipient} number={number} setNumber={setNumber} handleNumberChange={handleNumberChange}/>
                 <div className='flex flex-col items-center'>
-                    <p className='text-xl font-semibold lg:text-2xl'>Pick a Plan</p>
+                    <p className='text-lg font-semibold lg:text-xl'>Pick a Plan</p>
                     <div className='flex'>
                         <div className='flex border border-gray-600 rounded-2xl w-sm p-3 items-center justify-between cursor-pointer' onClick={() => handleSelectPlan() }>
                             <span className='text-gray-600'>{planName ? planName : 'Select a Data Plan'}</span>
