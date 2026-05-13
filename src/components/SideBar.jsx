@@ -19,9 +19,9 @@ const SideBar = ({sideBar, setSideBar}) => {
     ]
 
   return (
-    <div className={`${ sideBar? 'translate-x-0' :'-translate-x-full'} w-[50%] transition min-h-screen shadow-sm fixed lg:hidden top-0 left-0 bg-white z-50 flex flex-col py-10`}>
+    <div className={`${ sideBar? 'translate-x-0' :'-translate-x-full'} w-[60%] transition min-h-screen shadow-sm fixed lg:hidden top-0 left-0 bg-white z-50 flex flex-col py-10`}>
         <div className='flex w-full px-5 justify-between items-center mb-5'>
-            <h1 className='text-2xl lg:text-4xl cursor-pointer font-bold' onClick={() => {navigate("/"); console.log("Logo clicked")}}>Sub4Me</h1>
+            <h1 className='text-2xl lg:text-4xl cursor-pointer font-bold' onClick={() => {navigate("/"); }}>Sub4Me</h1>
             <X className='cursor-pointer' onClick={() => {setSideBar(false)}}/>
         </div>
         <hr className='h-2 w-full' />
@@ -46,10 +46,10 @@ const SideBar = ({sideBar, setSideBar}) => {
         <div className='flex items-center px-5 w-full mt-auto'>
             {
                 user 
-                ? (<div className='flex w-full'>
+                ? (<div className='flex w-full text-sm'>
                     <UserButton />
-                    {user.firstName && <p className='ml-2 text-gray-700'>{user.firstName}</p>}
-                    {user.lastName && <p className='ml-1 text-gray-700'>{user.lastName}</p>}
+                    {user.firstName && <p className='ml-2 text-gray-700 text-sm'>{user.firstName}</p>}
+                    {user.lastName && <p className='ml-1 text-gray-700 text-sm'>{user.lastName}</p>}
                 </div>
                  )
                 : <button onClick={openSignIn} className='cursor-pointer px-4 py-2 border border-black text-black hover:bg-black hover:text-white rounded-3xl self-end'>Login</button>

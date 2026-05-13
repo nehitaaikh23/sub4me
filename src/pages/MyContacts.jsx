@@ -21,7 +21,7 @@ const MyContacts = () => {
     }
 
   return user ? (
-    <div className='flex justify-center min-h-screen w-full'>
+    <div className='flex flex-col items-center min-h-screen w-full'>
         <Navbar />
         <div className='w-full px-6 flex lg:px-24 gap-5 items-center flex-col mt-20'>
             <div className='flex items-center justify-between w-full'>

@@ -12,10 +12,10 @@ const PickDataPlan = ({ setPlan, plan, pickPlan, setPickPlan, network, planName,
 
   return (
     <div className='min-h-screen fixed flex items-center justify-center w-full px-8 lg:px-24 z-50 backdrop-blur-sm'>
-        <div className='flex items-center bg-white px-10 py-5 flex-col gap-2 rounded-lg shadow-md'>
+        <div className='flex w-[280px] bg-white px-5 py-5 flex-col gap-2 rounded-lg shadow-md'>
           <div className='flex w-full justify-end'><X onClick={() => setPickPlan(false)} className='text-slate-500 cursor-pointer w'/></div>
-            <p className='text-xl font-semibold lg:text-2xl'>{network} Data Plans</p>
-            <div className='flex gap-4'>
+            <p className='text-xl font-semibold lg:text-2xl text-center'>{network} Data Plans</p>
+            <div className='flex gap-4 overflow-x-hidden overflow-x-scroll'>
                 {planTypes.map((plan, i) => {
                   return (
                     <div onClick={() => setPlanType(plan)} className={`${planType === plan ? 'bg-black text-white' : ''}

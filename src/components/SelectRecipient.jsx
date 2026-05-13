@@ -54,10 +54,10 @@ const SelectRecipient = ({ setRecipient, recipient, number, setNumber, network, 
                     <div className='flex flex-col justify-center items-center flex-wrap gap-2'>
                         <p className='text-lg font-semibold lg:text-xl'>Who Is This For?</p>
                         <div className='flex gap-2 justify-center items-center'>
-                            <div onClick={() => {setRecipient('myself'); setNumber(`${assets.myNumber}`); setSelectFromContacts(false); setNetwork(myContact.network)}} className={`lg:w-sm w-[140px] h-27 rounded-2xl border
+                            <div onClick={() => {setRecipient('myself'); setNumber(`${assets.myNumber}`); setSelectFromContacts(false); setNetwork(myContact.network)}} className={`lg:w-sm w-[120px] h-27 rounded-2xl border
                          border-black outline-0 cursor-pointer text-lg lg:text-xl  ${recipient === 'myself' ? 'bg-black text-white' : ""}
                          hover:bg-black hover:text-white transition flex flex-col lg:flex-row gap-2 items-center justify-center`}> <User className='pt-2'/> Myself <div className='text-sm'>({myContact.number})</div></div>
-                            <div onClick={() => {setRecipient('other'); setNumber(''); setNetwork(null)}} className={`lg:w-sm w-[140px] h-27 border
+                            <div onClick={() => {setRecipient('other'); setNumber(''); setNetwork(null)}} className={`lg:w-sm w-[120px] h-27 border
                          border-black outline-0 rounded-2xl cursor-pointer hover:bg-black hover:text-white 
                          transition flex flex-col lg:flex-row gap-2 items-center justify-center ${recipient === 'other' ? 'bg-black text-white' : ""} text-lg lg:text-xl`}>
                             <Gift />
@@ -65,15 +65,15 @@ const SelectRecipient = ({ setRecipient, recipient, number, setNumber, network, 
                             </div>
                         </div>
                     </div>
-                    {recipient === 'other' && (<div className='flex w-sm items-center justify-center border rounded-2xl border-black lg:w-[48rem]'>
+                    {recipient === 'other' && (<div className='flex w-[240px] items-center justify-center border rounded-2xl border-black lg:w-[48rem]'>
                              
-                            <input onChange={(e) => {handleNumberChange(e)}} placeholder='08012345678' type="tel" className=' transition flex h-15 outline-0 text-lg lg:text-xl justify-center items-center w-full px-5' value={number}/>
+                            <input onChange={(e) => {handleNumberChange(e)}} placeholder='08012345678' type="tel" className=' transition flex h-10 lg:h-14 outline-0 text-sm lg:text-lg justify-center items-center w-full px-5' value={number}/>
                     </div>)}
                     <div className='flex w-full items-center justify-center pr-4'>
                             {network && !selectNetworkManually && (
                                  <div className="flex items-center">
                                     <img src={networkLogos.find((logo) => logo.name === network)?.logo || ''} alt={network} className="w-6 mr-2" />
-                                    <p>{network} detected <span onClick={() => setSelectNetworkManually(true)} className='text-blue-900 cursor-pointer ml-3'>Select Manually</span></p>
+                                    <p className='text-sm font-semibold text-gray-700'>{network} detected <span onClick={() => setSelectNetworkManually(true)} className='text-blue-900 cursor-pointer ml-3'>Select Manually</span></p>
                         
                                     
                                 </div>
@@ -111,9 +111,9 @@ const SelectRecipient = ({ setRecipient, recipient, number, setNumber, network, 
                                     <span className='absolute left-1 top-1 w-3 h-3 bg-white rounded-full
                                     transition peer-checked:translate-x-4'></span>
                                 </label>
-                                <p>Save to Contacts</p>
+                                <p className='text-sm'>Save to Contacts</p>
                             </div>
-                            <p className='text-blue-900 cursor-pointer' onClick={() => setSelectFromContacts(!selectFromContacts)}>Select from contacts</p>
+                            <p className='text-blue-900 cursor-pointer text-sm' onClick={() => setSelectFromContacts(!selectFromContacts)}>Select from contacts</p>
                         </div>
                         {selectFromContacts && <div>
                             <MiniContact network={network} setNetwork={setNetwork} detectNetwork={detectNetwork} number={number} setNumber={setNumber} selectFromContacts={selectFromContacts} setSelectFromContacts={setSelectFromContacts} selectedContact={selectedContact} setSelectedContact={setSelectedContact}/>

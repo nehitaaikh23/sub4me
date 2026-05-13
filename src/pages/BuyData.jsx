@@ -68,7 +68,7 @@ const BuyData = () => {
     <div>
         
         <Navbar />
-        <div className='min-h-screen flex items-center justify-center w-full px-8 lg:px-24'>
+        <div className='min-h-screen flex items-center justify-center w-full px-12 lg:px-24'>
             {pickPlan && (<PickDataPlan planName={planName} setPlanName={setPlanName} setPlan={setPlan} plan={plan} pickPlan={pickPlan} setPickPlan={setPickPlan} network={network}/>)}
             <ConfirmationScreen planName={planName} confirmationScreen={confirmationScreen} setConfirmationScreen={setConfirmationScreen} plan={plan} number={number} purchaseType={purchaseType} recipient={recipient} network={network}/>
             <div className='min-h-[60vh] flex flex-col gap-5 items-center justify-center'>
@@ -78,15 +78,15 @@ const BuyData = () => {
                 <SelectRecipient network={network} setNetwork={setNetwork} setRecipient={setRecipient} recipient={recipient} number={number} setNumber={setNumber} handleNumberChange={handleNumberChange}/>
                 <div className='flex flex-col items-center'>
                     <p className='text-lg font-semibold lg:text-xl'>Pick a Plan</p>
-                    <div className='flex'>
-                        <div className='flex border border-gray-600 rounded-2xl w-sm p-3 items-center justify-between cursor-pointer' onClick={() => handleSelectPlan() }>
-                            <span className='text-gray-600'>{planName ? planName : 'Select a Data Plan'}</span>
+                    <div className='flex mt-3'>
+                        <div className='flex border border-gray-600 rounded-2xl h-12 lg:h-14 w-3xs lg:w-lg text-sm p-3 items-center justify-between cursor-pointer' onClick={() => handleSelectPlan() }>
+                            <span className='text-gray-600 h-5'>{planName ? planName : 'Select a Data Plan'}</span>
                             <ChevronDown />
                         </div>           
                     </div>
                     
                 </div>
-                <button type="submit" className='w-60 cursor-pointer h-20 bg-black rounded-lg text-white text-xl'>Buy Data</button>
+                <button type="submit" className='w-40 cursor-pointer h-15 bg-black rounded-lg text-white text-lg'>Buy Data</button>
                 </form>
             
                             
