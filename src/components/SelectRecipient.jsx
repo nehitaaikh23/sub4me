@@ -70,7 +70,7 @@ const SelectRecipient = ({ setRecipient, recipient, number, setNumber, network, 
                             <input onChange={(e) => {handleNumberChange(e)}} placeholder='08012345678' type="tel" className=' transition flex h-15 outline-0 text-lg lg:text-xl justify-center items-center w-full px-5' value={number}/>
                     </div>)}
                     <div className='flex w-full items-center justify-center pr-4'>
-                            {network && (
+                            {network && !selectNetworkManually && (
                                  <div className="flex items-center">
                                     <img src={networkLogos.find((logo) => logo.name === network)?.logo || ''} alt={network} className="w-6 mr-2" />
                                     <p>{network} detected <span onClick={() => setSelectNetworkManually(true)} className='text-blue-900 cursor-pointer ml-3'>Select Manually</span></p>
@@ -79,8 +79,8 @@ const SelectRecipient = ({ setRecipient, recipient, number, setNumber, network, 
                                 </div>
                     )}
                     {selectNetworkManually && (
-                        <div className='flex w-sm fixed ml-[-80px] lg:ml-0 flex-col bg-white text-black rounded-lg shadow-lg py-2 min-h-25'>
-                                <h1 className='text-gray-500 mb-2 ml-2'>CONTACTS</h1>
+                        <div className='flex w-3xs sticky flex-col bg-white text-black rounded-lg shadow-lg py-2 min-h-25'>
+                                <h1 className='text-gray-500 mb-2 ml-2'>NETWORKS</h1>
                                 <hr className='w-full text-gray-300'/>
                                 {networkProviders.map((netw, i) => 
                                         (

@@ -7,7 +7,7 @@ const MiniContact = ({selectFromContacts, setSelectFromContacts, selectedContact
     
 
   return (
-    <div className='flex w-sm fixed ml-[-80px] lg:ml-0 flex-col bg-white text-black rounded-lg shadow-lg py-2 min-h-25'>
+    <div className='flex w-3xs sticky right-7 flex-col bg-white text-black rounded-lg shadow-lg py-2 min-h-25'>
         <h1 className='text-gray-500 mb-2 ml-2'>CONTACTS</h1>
         <hr className='w-full text-gray-300'/>
         {myDummyContacts.map((contact, i) => 
