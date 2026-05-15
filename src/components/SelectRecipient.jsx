@@ -55,11 +55,11 @@ const SelectRecipient = ({ setRecipient, recipient, number, setNumber, network, 
                         <p className='text-lg font-semibold lg:text-xl'>Who Is This For?</p>
                         <div className='flex gap-2 justify-center items-center'>
                             <div onClick={() => {setRecipient('myself'); setNumber(`${assets.myNumber}`); setSelectFromContacts(false); setNetwork(myContact.network)}} className={`lg:w-sm w-[120px] h-27 rounded-2xl border
-                         border-black outline-0 cursor-pointer text-lg lg:text-xl  ${recipient === 'myself' ? 'bg-black text-white' : ""}
-                         hover:bg-black hover:text-white transition flex flex-col lg:flex-row gap-2 items-center justify-center`}> <User className='pt-2'/> Myself <div className='text-sm'>({myContact.number})</div></div>
+                         border-black outline-0 cursor-pointer text-sm lg:text-xl  ${recipient === 'myself' ? 'bg-black text-white' : ""}
+                         hover:bg-black font-semibold hover:text-white transition flex flex-col lg:flex-row gap-2 items-center justify-center`}> <User className='pt-2'/> Myself <div className='text-sm'>({myContact.number})</div></div>
                             <div onClick={() => {setRecipient('other'); setNumber(''); setNetwork(null)}} className={`lg:w-sm w-[120px] h-27 border
                          border-black outline-0 rounded-2xl cursor-pointer hover:bg-black hover:text-white 
-                         transition flex flex-col lg:flex-row gap-2 items-center justify-center ${recipient === 'other' ? 'bg-black text-white' : ""} text-lg lg:text-xl`}>
+                         transition flex flex-col text-sm lg:text-xl lg:flex-row gap-2 items-center justify-center ${recipient === 'other' ? 'bg-black text-white' : ""} font-semibold`}>
                             <Gift />
                             Someone Else
                             </div>
