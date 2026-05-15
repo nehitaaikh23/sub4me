@@ -68,7 +68,7 @@ const BuyData = () => {
     <div>
         
         <Navbar />
-        <div className='min-h-screen flex items-center justify-center w-full px-12 lg:px-24'>
+        <div className='min-h-screen flex items-center justify-center w-full px-8 lg:px-24'>
             {pickPlan && (<PickDataPlan planName={planName} setPlanName={setPlanName} setPlan={setPlan} plan={plan} pickPlan={pickPlan} setPickPlan={setPickPlan} network={network}/>)}
             <ConfirmationScreen planName={planName} confirmationScreen={confirmationScreen} setConfirmationScreen={setConfirmationScreen} plan={plan} number={number} purchaseType={purchaseType} recipient={recipient} network={network}/>
             <div className='min-h-[60vh] flex flex-col gap-5 items-center justify-center'>

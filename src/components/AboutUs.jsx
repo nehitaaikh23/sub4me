@@ -17,15 +17,19 @@ const AboutUs = () => {
         </div>
         <div className="mt-3 flex flex-col items-center gap-5 max-w-full md:grid md:grid-cols-2 md:gap-x-10">
             {features.map((feature, i) => {
-                return <div className='flex px-3 cursor-pointer hover:-translate-y-2 transition flex-col justify-center items-center rounded-lg shadow-xl h-60 w-[280px]'>
-                    <div className='bg-gray-300 w-9 h-9 rounded-lg flex items-center justify-center self-start ml-10 mb-5'>
-                        {feature.logo}
-                    </div>
+                return <div className='flex cursor-pointer hover:-translate-y-2 transition justify-center items-center rounded-lg shadow-xl h-60 w-[280px]'>
+                    <div className='flex flex-col max-w-2xs'>
+                        <div className='bg-gray-300 w-9 h-9 rounded-lg flex items-center justify-center self-start mb-5'>
+                            {feature.logo}
+                        </div>
                 
-                    <div className='max-w-2xs'>
-                        <h1 className='font-semibold'>{feature.title}</h1>
-                        <p>{feature.description}</p>
+                        <div className=''>
+                            <h1 className='font-semibold'>{feature.title}</h1>
+                            <p>{feature.description}</p>
+                        </div>
                     </div>
+
+                    
                 </div>
             })
                 }

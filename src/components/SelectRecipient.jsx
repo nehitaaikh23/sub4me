@@ -111,9 +111,9 @@ const SelectRecipient = ({ setRecipient, recipient, number, setNumber, network, 
                                     <span className='absolute left-1 top-1 w-3 h-3 bg-white rounded-full
                                     transition peer-checked:translate-x-4'></span>
                                 </label>
-                                <p className='text-sm'>Save to Contacts</p>
+                                <p className='text-sm lg:text-lg'>Save</p>
                             </div>
-                            <p className='text-blue-900 cursor-pointer text-sm' onClick={() => setSelectFromContacts(!selectFromContacts)}>Select from contacts</p>
+                            <p className='text-blue-900 cursor-pointer text-sm lg:text-lg' onClick={() => setSelectFromContacts(!selectFromContacts)}>Choose Contact</p>
                         </div>
                         {selectFromContacts && <div>
                             <MiniContact network={network} setNetwork={setNetwork} detectNetwork={detectNetwork} number={number} setNumber={setNumber} selectFromContacts={selectFromContacts} setSelectFromContacts={setSelectFromContacts} selectedContact={selectedContact} setSelectedContact={setSelectedContact}/>

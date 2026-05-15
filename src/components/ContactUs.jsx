@@ -19,7 +19,7 @@ const ContactUs = () => {
                     <label className='self-start' htmlFor="subject">Subject</label>
                     <input className='border border-gray-500 lg:w-lg py-2 px-2 w-72 rounded-lg outline-0' type="text" name='subject' placeholder='Dispute, Suggestions, General...'/>
                     <label className='self-start' htmlFor="message">Message</label>
-                    <textarea className='border border-gray-500 lg:w-lg py-2 px-2 w-72 rounded-lg outline-0' name="message" id="" placeholder='Enter Your Message Here'></textarea>
+                    <textarea className='border resize-none h-32 border-gray-500 lg:w-lg py-2 px-2 w-72 rounded-lg outline-0' name="message" id="" placeholder='Enter Your Message Here'></textarea>
                     <button className='w-25 h-10 rounded-lg bg-black text-white mt-5' type='submit'>Send</button>
                 </form>
             </div>
